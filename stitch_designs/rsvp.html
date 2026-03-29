@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4d125",
+                        "background-light": "#FAF9F6",
+                        "background-dark": "#221f10",
+                        "slate-900": "#2C2C2C",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF9F6;
+        }
+        .form-input:focus {
+            border-color: #f4d125 !important;
+            box-shadow: 0 0 0 1px #f4d125 !important;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-slate-900 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-stone-200/60 px-6 py-6 lg:px-20">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">favorite</span>
+</div>
+<h2 class="text-slate-900 text-xl font-bold tracking-tight uppercase">German &amp; Leandro</h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-end gap-10 items-center">
+<nav class="flex items-center gap-10">
+<a class="text-slate-900/70 hover:text-slate-900 text-xs font-bold uppercase tracking-widest transition-colors" href="#">Our Story</a>
+<a class="text-slate-900/70 hover:text-slate-900 text-xs font-bold uppercase tracking-widest transition-colors" href="#">Gallery</a>
+<a class="text-slate-900/70 hover:text-slate-900 text-xs font-bold uppercase tracking-widest transition-colors" href="#">Venue</a>
+<a class="text-slate-900 text-xs font-bold uppercase tracking-widest border-b-2 border-primary" href="#">RSVP</a>
+</nav>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<div class="px-6 py-12 lg:px-20 lg:py-16 max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col gap-8">
+<div class="space-y-4">
+<span class="text-primary font-bold uppercase tracking-[0.3em] text-xs">Save the Date</span>
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 leading-none">
+                                    Join Us on Our <br/><span class="text-primary/80 italic font-medium">Special Day</span>
+</h1>
+<p class="text-slate-900/60 text-lg max-w-md leading-relaxed">
+                                    We are so excited to celebrate our love with our closest friends and family. Your presence would mean the world to us.
+                                </p>
+</div>
+<div class="aspect-[4/3] w-full bg-stone-200 rounded-xl overflow-hidden shadow-2xl shadow-stone-200/50" data-alt="Minimalist black and white photo of a couple">
+<img alt="Wedding celebration" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoX5QKSib60Jh5NFOj4-NYIPVEJwtUDuOsZwBj0sjttpdc9xsk9s7v7dWiyUCMNseMm5D6Gnk0IbkhNMHCy3xEP-pnDSRkm8L_SQ_MSYQrjJIDsm5xCCmWlOcCelT_juQC7htVUHXfMvqRicbQtgdqB_wJrV3icPGvgymhElq2_ZY0OGmClo2wK4oizoZlziJP5sBT4xNA9DY60bXRMItaCvjX7JAxIILefA6ZikXkNPdQ_8SJDDvrxP0YRYyNGll23z8_zy9Y9Rk"/>
+</div>
+</div>
+<!-- RSVP Form Container -->
+<div class="bg-white p-8 lg:p-14 rounded-xl shadow-xl shadow-stone-200/40 border border-stone-100">
+<div class="mb-10">
+<h2 class="text-3xl font-bold text-slate-900 mb-2">RSVP</h2>
+<p class="text-slate-900/50 text-sm">Kindly respond by the 15th of August, 2024.</p>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-900/40 px-1">First Name</label>
+<input class="form-input w-full border-0 border-b border-stone-200 bg-transparent px-1 py-3 text-slate-900 focus:ring-0 placeholder:text-stone-300 transition-all" placeholder="e.g. Maria" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-900/40 px-1">Last Name</label>
+<input class="form-input w-full border-0 border-b border-stone-200 bg-transparent px-1 py-3 text-slate-900 focus:ring-0 placeholder:text-stone-300 transition-all" placeholder="e.g. Müller" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-900/40 px-1">Email Address</label>
+<input class="form-input w-full border-0 border-b border-stone-200 bg-transparent px-1 py-3 text-slate-900 focus:ring-0 placeholder:text-stone-300 transition-all" placeholder="email@example.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-900/40 px-1">Will you attend?</label>
+<select class="form-input w-full border-0 border-b border-stone-200 bg-transparent px-1 py-3 text-slate-900 focus:ring-0 transition-all">
+<option value="yes">Joyfully Accept</option>
+<option value="no">Regretfully Decline</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-900/40 px-1">Dietary Requirements</label>
+<input class="form-input w-full border-0 border-b border-stone-200 bg-transparent px-1 py-3 text-slate-900 focus:ring-0 placeholder:text-stone-300 transition-all" placeholder="None, Vegan, Allergies..." type="text"/>
+</div>
+<div class="pt-6">
+<button class="w-full bg-primary hover:bg-primary/90 text-slate-900 font-bold uppercase tracking-[0.2em] text-sm py-5 rounded-full shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group" type="submit">
+                                        Submit Response
+                                        <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward_ios</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Venue Map Section -->
+<div class="px-6 py-20 lg:px-20 bg-stone-100/50">
+<div class="max-w-7xl mx-auto flex flex-col gap-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-primary font-bold uppercase tracking-[0.3em] text-xs">The Venue</span>
+<h2 class="text-4xl font-bold text-slate-900 mt-2">Palacio de Cristal</h2>
+<p class="text-slate-900/50 mt-1">Retiro Park, Madrid, Spain</p>
+</div>
+<button class="flex items-center gap-2 text-slate-900 font-bold uppercase tracking-widest text-xs border-b border-slate-900 pb-1">
+<span class="material-symbols-outlined text-sm">map</span>
+                                Get Directions
+                            </button>
+</div>
+<div class="h-96 w-full rounded-xl overflow-hidden border border-stone-200 grayscale opacity-80" data-alt="Stylized architectural map of Madrid Retiro Park" data-location="Madrid, Spain" style="">
+<img alt="Madrid view" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJlas2UbOHvKWIzqOhFbL75kDL4rXrbA2aUkvs3VE-NIkAg-hab1jkEADhwJW2H4ZCPYt7ayhWY133JkynUB-_dg97Ss2CFavZglQ5yfsNpeP8IHiD8G9AFZRVCArKazoKp8CMM1O3iE7qwE4RBQulai8vJLEXj2YEjwdQVegDMop9toEh1OT4YtRwbjA-1tdhDrHPPyc3yLcNbRSksWNg23MaKjpnL8rcPJAT2uV3m_ANPN4gFoYuRJONUHR0NeSS8PQp5EZ8d-4"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="px-6 py-12 lg:px-20 border-t border-stone-200 flex flex-col items-center gap-6">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<p class="text-slate-900/40 text-xs font-bold uppercase tracking-[0.4em]">October 24, 2024</p>
+<div class="flex gap-8 mt-4">
+<a class="text-slate-900/30 hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="text-slate-900/30 hover:text-primary transition-colors" href="#">Registry</a>
+<a class="text-slate-900/30 hover:text-primary transition-colors" href="#">Accommodation</a>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>German &amp; Leandro - Nuestra Boda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#f4d125",
+                "background-light": "#FAF9F6",
+                "background-dark": "#221f10",
+                "olive": "#556B2F",
+                "gold-accent": "#C5A059"
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"],
+                "serif": ["Playfair Display", "serif"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .serif-text {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="flex items-center justify-between px-6 lg:px-20 py-6 border-b border-olive/10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-accent text-3xl">local_florist</span>
+<h2 class="serif-text text-2xl font-bold tracking-tight text-olive dark:text-primary">G&amp;L</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-xs uppercase tracking-[0.2em] font-medium hover:text-gold-accent transition-colors" href="#">Nuestra Historia</a>
+<a class="text-xs uppercase tracking-[0.2em] font-medium hover:text-gold-accent transition-colors" href="#">Ceremonia</a>
+<a class="text-xs uppercase tracking-[0.2em] font-medium hover:text-gold-accent transition-colors" href="#">Fiesta</a>
+<button class="bg-primary hover:bg-primary/90 text-slate-900 px-8 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] font-bold transition-all shadow-sm">
+                Confirmar
+            </button>
+</nav>
+<button class="md:hidden material-symbols-outlined">menu</button>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="relative h-[70vh] flex items-center justify-center text-center px-4">
+<div class="absolute inset-0 z-0 overflow-hidden rounded-b-[4rem]">
+<div class="absolute inset-0 bg-black/30 z-10"></div>
+<img class="w-full h-full object-cover" data-alt="Elegant outdoor wedding setup with white flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhF3_y5qBNBBMrTA0zmhvO2m-dE06D2AH_AsNjOPr2X9IvJ2q9NBWWCzgXx-bVy5frKUYfPL5HoCwnzfC-zPtixWp_CAuG6o3cWrhyBWbmugBONmtrE1R4fIW1yIBxfC39N1WCHoqV3q51yiKD0VwqlniSMywAAgGL_GW68WiLe0vtxwOFJs8t0EpMhch8zkEbj_5oqbZ3AaPAWqZ4rwQvOB2PWsIbIQA5aQvoYY7h0IUAVhDF0_t08-uN48k7QKrbbiE3WGYoPVQ"/>
+</div>
+<div class="relative z-20 text-white max-w-3xl">
+<span class="text-sm uppercase tracking-[0.4em] mb-6 block font-medium">Estás Invitado</span>
+<h1 class="serif-text text-5xl md:text-7xl lg:text-8xl mb-6">German &amp; Leandro</h1>
+<p class="text-lg md:text-xl font-light opacity-90 max-w-xl mx-auto italic serif-text">
+                    "En el jardín de nuestras vidas, hoy florece la promesa de un siempre."
+                </p>
+</div>
+</section>
+<!-- Countdown Section -->
+<section class="max-w-5xl mx-auto px-6 -mt-24 relative z-30 pb-20">
+<div class="bg-white dark:bg-slate-800/50 backdrop-blur-xl rounded-xl shadow-2xl p-8 md:p-12 border border-olive/5">
+<div class="text-center mb-10">
+<h3 class="serif-text text-olive dark:text-primary text-2xl italic mb-2">Comienza la cuenta regresiva</h3>
+<div class="w-16 h-px bg-gold-accent mx-auto"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+<div class="flex flex-col items-center p-4 rounded-lg bg-background-light dark:bg-background-dark/30 border border-olive/10">
+<span class="serif-text text-4xl md:text-5xl font-light text-slate-800 dark:text-slate-100">120</span>
+<span class="text-[10px] uppercase tracking-[0.2em] mt-3 font-semibold text-olive/60 dark:text-primary/60">Días</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-background-light dark:bg-background-dark/30 border border-olive/10">
+<span class="serif-text text-4xl md:text-5xl font-light text-slate-800 dark:text-slate-100">12</span>
+<span class="text-[10px] uppercase tracking-[0.2em] mt-3 font-semibold text-olive/60 dark:text-primary/60">Horas</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-background-light dark:bg-background-dark/30 border border-olive/10">
+<span class="serif-text text-4xl md:text-5xl font-light text-slate-800 dark:text-slate-100">45</span>
+<span class="text-[10px] uppercase tracking-[0.2em] mt-3 font-semibold text-olive/60 dark:text-primary/60">Minutos</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-background-light dark:bg-background-dark/30 border border-olive/10">
+<span class="serif-text text-4xl md:text-5xl font-light text-slate-800 dark:text-slate-100">30</span>
+<span class="text-[10px] uppercase tracking-[0.2em] mt-3 font-semibold text-olive/60 dark:text-primary/60">Segundos</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Event Details Section -->
+<section class="py-20 bg-[#f4f3ef] dark:bg-background-dark/50">
+<div class="max-w-6xl mx-auto px-6">
+<div class="flex flex-col items-center text-center mb-16">
+<span class="material-symbols-outlined text-gold-accent text-4xl mb-4">auto_awesome</span>
+<h2 class="serif-text text-4xl md:text-5xl text-olive dark:text-primary mb-4">Detalles del Evento</h2>
+<p class="max-w-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                        Nos encantaría que nos acompañes en cada momento de este día tan especial. Hemos planeado cada detalle con mucho amor.
+                    </p>
+</div>
+<div class="grid md:grid-cols-2 gap-12 lg:gap-20">
+<!-- Ceremonia -->
+<div class="group flex flex-col items-center text-center p-10 rounded-lg bg-white dark:bg-slate-800 border border-olive/5 shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="w-20 h-20 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center mb-8 border border-gold-accent/20 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-gold-accent text-3xl">church</span>
+</div>
+<h3 class="serif-text text-2xl text-olive dark:text-primary mb-4">La Ceremonia</h3>
+<div class="space-y-2 mb-8">
+<p class="font-bold text-slate-800 dark:text-slate-100 uppercase tracking-widest text-xs">Sábado 24 de Agosto</p>
+<p class="text-lg text-slate-600 dark:text-slate-400 serif-text italic">17:00 Horas</p>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Parroquia San José, Buenos Aires</p>
+</div>
+<button class="text-xs uppercase tracking-widest font-bold text-gold-accent border-b border-gold-accent/30 pb-1 hover:border-gold-accent transition-all">
+                            Cómo llegar
+                        </button>
+</div>
+<!-- Fiesta -->
+<div class="group flex flex-col items-center text-center p-10 rounded-lg bg-white dark:bg-slate-800 border border-olive/5 shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="w-20 h-20 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center mb-8 border border-gold-accent/20 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-gold-accent text-3xl">celebration</span>
+</div>
+<h3 class="serif-text text-2xl text-olive dark:text-primary mb-4">La Fiesta</h3>
+<div class="space-y-2 mb-8">
+<p class="font-bold text-slate-800 dark:text-slate-100 uppercase tracking-widest text-xs">Sábado 24 de Agosto</p>
+<p class="text-lg text-slate-600 dark:text-slate-400 serif-text italic">20:30 Horas</p>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Quinta Los Olivos, Pilar</p>
+</div>
+<div class="mb-8 flex items-center gap-2 text-xs uppercase tracking-widest text-olive dark:text-primary font-semibold">
+<span class="material-symbols-outlined text-sm">checkroom</span>
+                            Dress Code: Etiqueta
+                        </div>
+<button class="text-xs uppercase tracking-widest font-bold text-gold-accent border-b border-gold-accent/30 pb-1 hover:border-gold-accent transition-all">
+                            Ver Ubicación
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- RSVP Teaser -->
+<section class="py-24 px-6 text-center bg-white dark:bg-background-dark">
+<div class="max-w-xl mx-auto">
+<h2 class="serif-text text-3xl md:text-4xl text-slate-800 dark:text-slate-100 mb-8">¿Nos acompañas?</h2>
+<p class="text-slate-500 dark:text-slate-400 mb-10 leading-relaxed italic serif-text">
+                    Por favor, confirma tu asistencia antes del 1 de Agosto para ayudarnos con la organización de este gran día.
+                </p>
+<button class="bg-primary hover:bg-primary/90 text-slate-900 px-12 py-4 rounded-full text-sm uppercase tracking-[0.2em] font-black transition-all shadow-lg hover:shadow-primary/20">
+                    Confirmar Asistencia
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="py-12 px-6 border-t border-olive/5 bg-background-light dark:bg-background-dark text-center">
+<div class="serif-text text-olive dark:text-primary text-3xl mb-4 italic">G &amp; L</div>
+<p class="text-[10px] uppercase tracking-[0.3em] text-slate-400">Hecho con amor • 2024</p>
+</footer>
+</div>
+</body></html>

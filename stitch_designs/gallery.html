@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4d125",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+        .masonry-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (max-width: 640px) {
+            .masonry-grid { column-count: 1; }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 lg:px-20 py-5 bg-background-light/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight uppercase">German &amp; Leandro</h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Our Story</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Schedule</a>
+<a class="text-sm font-medium text-primary" href="#">Dress Code</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Gallery</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">RSVP</a>
+</nav>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-full h-11 px-6 bg-primary text-slate-900 text-sm font-bold transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                        RSVP Now
+                    </button>
+</div>
+<button class="lg:hidden p-2 text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-6 lg:px-20 py-12">
+<!-- Dress Code Section -->
+<section class="mb-24">
+<div class="flex flex-col items-center text-center mb-12">
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-3">The Celebration</span>
+<h1 class="text-4xl lg:text-6xl font-black leading-tight tracking-tight mb-6">Dress Code</h1>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl text-lg leading-relaxed">
+                            We invite you to celebrate in style. To create a cohesive and timeless atmosphere, we kindly request our guests to follow a <span class="text-slate-900 dark:text-slate-100 font-semibold">Black Tie Optional</span> dress code inspired by our selected palette.
+                        </p>
+</div>
+<div class="bg-white dark:bg-slate-800/50 rounded-xl p-8 lg:p-12 shadow-sm border border-primary/10">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div>
+<h3 class="text-2xl font-bold mb-4">Color Palette</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-8">Our palette reflects the warmth of our love. We encourage you to incorporate these tones into your attire.</p>
+<div class="flex flex-wrap gap-6 mb-8">
+<div class="flex flex-col items-center gap-3">
+<div class="size-16 rounded-full border-4 border-white dark:border-slate-700 shadow-md" style="background-color: #556b2f;"></div>
+<span class="text-xs font-bold uppercase tracking-widest">Olive</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="size-16 rounded-full border-4 border-white dark:border-slate-700 shadow-md" style="background-color: #d4af37;"></div>
+<span class="text-xs font-bold uppercase tracking-widest">Gold</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="size-16 rounded-full border-4 border-white dark:border-slate-700 shadow-md" style="background-color: #e2725b;"></div>
+<span class="text-xs font-bold uppercase tracking-widest">Terracotta</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="size-16 rounded-full border-4 border-white dark:border-slate-700 shadow-md" style="background-color: #f5f5dc;"></div>
+<span class="text-xs font-bold uppercase tracking-widest">Cream</span>
+</div>
+</div>
+<div class="p-6 bg-primary/5 rounded-lg border-l-4 border-primary">
+<p class="text-sm italic text-slate-700 dark:text-slate-300">"Warm Tones • Olive Green • Gold Accents"</p>
+</div>
+</div>
+</div>
+<div class="relative aspect-video lg:aspect-square overflow-hidden rounded-xl group">
+<img alt="Elegant formal attire inspiration" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="Elegant formal attire examples in warm tones and olive green" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCicbf24MNttSlqaLChnTuTsaaMwiXbI7loj_8h_h1tYYre5f8qgizgTHd-waH4boZcHbhtRA5RO3meoJkcqGM4fQGDsMjSGz8fhULd3LoBeB_noR5eStW6QMbK5-bZLWDC0HCyLlFE2h_P-pWIqQS689UYbvDVjV0eKhtt0GEJsRKOytuFzlMWUg1X81-Rk3Fw_1c89zTqTDgiR8w9tHM5ZTJhxpD62pcqKOqem1LBuAo3XMV6FIcbBZk976-VhVtDpAWtjoVxaV0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="text-sm font-semibold uppercase tracking-widest mb-1">Inspiration</p>
+<p class="text-xl font-bold">Formal Attire Recommended</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="mb-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div class="max-w-xl">
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-3">Our Moments</span>
+<h2 class="text-4xl lg:text-5xl font-black leading-tight tracking-tight">The Gallery</h2>
+<p class="text-slate-600 dark:text-slate-400 mt-4">A collection of memories, love, and laughter as we prepare for our big day.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-3 rounded-full border border-primary/20 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-3 rounded-full border border-primary/20 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+</div>
+</div>
+<div class="masonry-grid">
+<div class="masonry-item">
+<div class="relative overflow-hidden rounded-lg group cursor-pointer">
+<img alt="Romantic couple in garden" class="w-full h-auto transition-transform duration-500 group-hover:scale-110" data-alt="Romantic couple walking through a sun-drenched olive garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Uqf9i482vpjvFGpk92ONEFYRGV5em3SlsvCbz83KqhLCJ6wPs0Bf__N7czyqHKRPGDLnzL_vEwd9U1BnOGw5XIV00NS31_XnJ0UV2EN3F9JjAsnA8eqcYxW2bvXqWGNZcBDo5Z-sZYOOKua1HRxnj8qdSxY_em7u27veLurnd9b7BrqKT6LOAvHvC2mXcH1wYfFR_v_9WCT3xJFZTFQH78HGKkdj3tvRQS1IkMmNdcA5jpcNagRl9B7SP9ilt0NgQwlKwT2ortc"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+</div>
+<div class="masonry-item">
+<div class="relative overflow-hidden rounded-lg group cursor-pointer">
+<img alt="Close up of rings" class="w-full h-auto transition-transform duration-500 group-hover:scale-110" data-alt="Close up shot of gold wedding rings on a marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIEM77QP42cMGahHMF70ytrHyTS6SI8lfaL_hmdbQ7udj8r5V9GXG_V5lkU2PxPt7eDcdJAEcEuUdUVa2Idqe-oybTe2-OYr1boTqBPI93KtMuDeL8EQ1P9CUAMEB4g4kZ_o_kttcCOW8IRnUYxY2a6GYbAJH6rlzEcLVMfhJGqZuccEeBScT-jeU02mJYv7pgtBoTH5EnudmaUqwtG3AtB6g3tRa9XIbSOUTpXP-SIUUIRuFj3JR19qMqgO3zsAEwdML3pjNYqsw"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+</div>
+<div class="masonry-item">
+<div class="relative overflow-hidden rounded-lg group cursor-pointer">
+<img alt="Couple by the lake" class="w-full h-auto transition-transform duration-500 group-hover:scale-110" data-alt="German and Leandro sitting by a serene lake at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfuqES3oNJY_dUzlt3utuvbAKeB5BrNO79bSetmig-3MpfbGqGSpErP3exXIodbSXq-qEXWgVuCYcNSg92AP7sSiNSGHLBTObL-EZIUEOyC32HykaW52ULYTH9IBFMJKYjfSPBzXoiYmaAt9KorWIZNft1DATq9f1wCY2lqbE4-Jrd__TCzC73Oz0haJHYGQKHmeveVDuT8-6aXgoPkSzhJZ3hgv6lxudci42XtGdrZHFtt_IeEYB4_ytSpJEuRQIqQffX8_Py49c"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+</div>
+<div class="masonry-item">
+<div class="relative overflow-hidden rounded-lg group cursor-pointer">
+<img alt="Elegant wedding invitations" class="w-full h-auto transition-transform duration-500 group-hover:scale-110" data-alt="Minimalist gold-pressed wedding invitations on cream paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2eyucMV1qf6iX4Ejyu-nGWm9sOF7tzHOBSY9CN2NGngwdAFraNGSsWAIdJI9YX6xXut0FtMvkKIW2fXxIEFUqNF1tH2Bn09FKMOzcCHOZMSJjL93KfSaST8EzlvocyRcVedpjJD2i9bZENKIZOvFppcozIRr7WzRMg699kPEjSt7OHBJBRSb_5x2oprsJY1h0wjoxaedLN7GAfXqvwTte9JmUjYUwDzcKUrILDQPirSgeruStA__VFsEnuikW-eTAqoRxR5DjG0o"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+</div>
+<div class="masonry-item">
+<div class="relative overflow-hidden rounded-lg group cursor-pointer">
+<img alt="Couple laughing" class="w-full h-auto transition-transform duration-500 group-hover:scale-110" data-alt="German and Leandro laughing together in a candid moment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMRKZX9OTEpyqLo78RFEoCxpCkORq4_WFTQE-dAHWlxvPjrtJ3HfeBFoaFFCCXDk0d1njqT_n3T5lpz25hKP52Ky1ERH1wJ_rqUauH-5sU0fVI80GYdthMB3hG0PtC3JP3D17dBMrmLWkL0GXaCfsQPgRfFfvvNVTLt-gLW3VmTvR8szKfjGRkmLcJTVVPieZYSQmU5jMFlLbQWfXPmFXHqcolEH7RfRbnzpj0Ge5VJ1K3jlfUG_kkYMAOi5tyZ1bIZUTr1gEgIX0"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+</div>
+<div class="masonry-item">
+<div class="relative overflow-hidden rounded-lg group cursor-pointer">
+<img alt="Toast at sunset" class="w-full h-auto transition-transform duration-500 group-hover:scale-110" data-alt="Two champagne glasses being toasted against a sunset backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrnzz5eyCrJYMtxesjWB-gB3VBAe-Vv34VYphFO1p5DjwD8Ft6D6WC8FTUO-1f2h-Q363O31NSIJ_3eJAEgQRxftCmN2uu1-dJA3enHiR-HHA1jV85V2cisP58I1ooctGPNHpKb62fGyCDFYXhe0IytzbXlGoJYREci8ZHPTyMDvhNr33qjscUzNfqZHMBOwUhC6EBdzdQ5Xu34KRDyYD-md6U2lOqY04i9NVPMHgSXit_8GJkKI_LcqAx1DXvqodB_xA5R5CcOOs"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<button class="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-primary text-slate-900 dark:text-slate-100 font-bold rounded-full hover:bg-primary/10 transition-all">
+                            View More Memories
+                            <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-background-dark border-t border-primary/10 py-20 px-6 lg:px-20 text-center">
+<div class="max-w-4xl mx-auto">
+<div class="size-12 text-primary mx-auto mb-8">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<h3 class="text-3xl font-bold mb-6 italic">With Love, German &amp; Leandro</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-10">We can't wait to share this beautiful day with all of you.</p>
+<div class="flex justify-center gap-8 mb-12">
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">favorite</span></a>
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+<p class="text-xs tracking-widest uppercase text-slate-400">© 2024 German &amp; Leandro Wedding • All Rights Reserved</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

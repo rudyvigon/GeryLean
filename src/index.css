@@ -1,0 +1,460 @@
+/* ─── SISTEMA DE DISEÑO BRIDGERTON 3D ──────────────────────────────────────── */
+
+/* VARIABLES */
+:root {
+  --gold: #D4AF37;
+  --gold-light: #F5E6A3;
+  --gold-dark: #B8962B;
+  --ivory: #FAF7F2;
+  --charcoal: #111111;
+  --silver: #E0E0E0;
+  --silver-light: #F5F5F5;
+  --silver-dark: #A0A0A0;
+  --black: #000000;
+}
+
+/* RESET + BASE */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background-color: var(--ivory);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* ─── TIPOGRAFÍA ────────────────────────────────────────────────────────────── */
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-jost {
+  font-family: 'Jost', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ─── NAVBAR GLASSMORPHISM ──────────────────────────────────────────────────── */
+.nav-glass {
+  backdrop-filter: blur(16px) saturate(1.8);
+  background-color: rgba(250, 247, 242, 0.78);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+/* ─── ANIMACIONES GLOBALES ──────────────────────────────────────────────────── */
+
+/* Ken Burns */
+@keyframes kenBurns {
+  from {
+    transform: scale(1.0) translate(0, 0);
+  }
+
+  to {
+    transform: scale(1.08) translate(-1%, -1%);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurns 22s ease-in-out infinite alternate;
+}
+
+/* Drift de ramas/flores */
+@keyframes drift {
+  from {
+    transform: translateY(-18px) rotate(-2deg);
+  }
+
+  to {
+    transform: translateY(18px) rotate(2deg);
+  }
+}
+
+.animate-drift {
+  animation: drift 12s ease-in-out infinite alternate;
+}
+
+/* Shimmer dorado en & */
+@keyframes goldShimmer {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #D4AF37, #F5E6A3, #D4AF37, #B8962B, #D4AF37);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 4s ease-in-out infinite;
+}
+
+/* Línea que se dibuja */
+@keyframes drawLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 120px;
+    opacity: 1;
+  }
+}
+
+.animate-draw-line {
+  animation: drawLine 1.5s ease-out 0.8s both;
+}
+
+/* Bounce arrow */
+@keyframes bounceDown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-bounce-down {
+  animation: bounceDown 1.5s ease-in-out infinite;
+}
+
+/* Pétalo cayendo */
+@keyframes petalFall {
+  0% {
+    transform: translateY(-20px) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.7;
+  }
+
+  90% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(110vh) translateX(60px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Flip de número (countdown) */
+@keyframes flipDown {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+  }
+
+  50% {
+    transform: perspective(400px) rotateX(-90deg);
+  }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+
+.flip-animate {
+  animation: flipDown 0.6s ease-in-out;
+}
+
+/* Separador pulsante (":") en countdown */
+@keyframes colonPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.colon-pulse {
+  animation: colonPulse 1s ease-in-out infinite;
+}
+
+/* Slide-in desde izquierda */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.7s ease-out both;
+}
+
+/* Slide-in desde derecha */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.7s ease-out both;
+}
+
+/* Fade-up para galería */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+/* Halo pulsante (badge horario) */
+@keyframes haloPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
+  }
+}
+
+.animate-halo {
+  animation: haloPulse 2.5s ease-in-out infinite;
+}
+
+/* Partículas doradas (RSVP / fiesta) */
+@keyframes riseParticle {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.9;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-180px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Twinkle estrellas */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Entry slide card */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up-fade {
+  animation: slideUpFade 0.9s ease-out 0.3s both;
+}
+
+/* Wave bottom (transición entre secciones) */
+
+/* Glow button */
+@keyframes goldGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+  }
+}
+
+/* ─── GALERÍA MASONRY ───────────────────────────────────────────────────────── */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 1.25rem;
+}
+
+.masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  break-inside: avoid;
+}
+
+@media (max-width: 1024px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}
+
+/* ─── 3D TILT CONTAINER ─────────────────────────────────────────────────────── */
+.tilt-wrapper {
+  perspective: 1000px;
+}
+
+.tilt-card {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+/* ─── LIGHTBOX ───────────────────────────────────────────────────────────────── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.96);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── FORM INPUTS ESTILO REGENCY ────────────────────────────────────────────── */
+.regency-input {
+  width: 100%;
+  background: rgba(250, 247, 242, 0.5);
+  border: none;
+  border-bottom: 2px solid rgba(44, 36, 34, 0.25);
+  padding: 12px 4px;
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.regency-input::placeholder {
+  color: rgba(44, 36, 34, 0.38);
+}
+
+.regency-input:focus {
+  border-bottom-color: var(--gold);
+}
+
+.regency-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(44, 36, 34, 0.7);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.regency-field:focus-within .regency-label {
+  color: var(--gold-dark);
+}
+
+/* ─── SCROLL REVEAL (via JS + clase) ───────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── BOTANICAL WALLPAPER (Dress Code bg) ──────────────────────────────────── */
+.botanical-bg {
+  background-color: var(--charcoal);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(224, 224, 224, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+}
+
+/* ─── PARCHMENT TEXTURE (Countdown bg) ─────────────────────────────────────── */
+.parchment-bg {
+  background: var(--ivory);
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 40px,
+      rgba(212, 175, 55, 0.03) 40px,
+      rgba(212, 175, 55, 0.03) 80px);
+}
