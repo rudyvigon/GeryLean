@@ -198,7 +198,7 @@ const Countdown = () => {
                     color: 'rgba(212,175,55,0.7)',
                     fontWeight: 600,
                 }}>
-                    Counting down with love
+                    La cuenta regresiva mas esperada
                 </p>
 
                 {/* Title */}
@@ -211,7 +211,7 @@ const Countdown = () => {
                         marginBottom: '1.2rem',
                         textShadow: '0 2px 20px rgba(0,0,0,0.4)',
                     }}>
-                        The Moment Approaches
+                        ¡El momento se acerca!
                     </h2>
 
                     {/* Ornamental divider */}
@@ -312,7 +312,7 @@ const Countdown = () => {
                     maxWidth: '480px',
                     lineHeight: 1.6,
                 }}>
-                    "Every second that passes is a heartbeat closer to forever."
+                    "Cada segundo que pasa es un latido más cerca del para siempre."
                 </p>
             </div>
 

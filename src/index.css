@@ -458,3 +458,8 @@ body {
       rgba(212, 175, 55, 0.03) 40px,
       rgba(212, 175, 55, 0.03) 80px);
 }
+/* Animacion Anillos */
+@keyframes spin-ring-left { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
+@keyframes spin-ring-right { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(-360deg); } }
+.ring-left { animation: spin-ring-left 5s linear infinite; transform-style: preserve-3d; }
+.ring-right { animation: spin-ring-right 5s linear infinite; transform-style: preserve-3d; }

@@ -10,7 +10,7 @@ const Gifts = () => {
         alias: "boda.gerylean"
     };
 
-    const whatsappLink = "https://api.whatsapp.com/send/?phone=542613139444&text=Hola%20German,%20me%20comunico%20para%20abonar%20la%20entrada%20del%20evento.&type=phone_number&app_absent=0";
+    const whatsappLink = "https://api.whatsapp.com/send/?phone=542613139444&text=Hola%20German,%20me%20comunico%20para%20abonar%20la%20entrada%20de%20la%20boda.&type=phone_number&app_absent=0";
 
     return (
         <section id="gifts" style={{

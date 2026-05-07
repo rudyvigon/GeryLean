@@ -90,29 +90,7 @@ const Footer = () => (
             <div style={{ width: '50px', height: '1px', background: 'linear-gradient(to left, transparent, rgba(212,175,55,0.3))' }} />
         </div>
 
-        {/* Links */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
-            {[
-                { icon: '♡', label: 'Compartir' },
-                { icon: '✉', label: 'Contacto' },
-                { icon: '★', label: 'Galería' },
-            ].map(item => (
-                <a key={item.label} href="#" className="font-jost" style={{
-                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px',
-                    fontSize: '10px',
-                    letterSpacing: '0.35em',
-                    textTransform: 'uppercase',
-                    color: 'rgba(212,175,55,0.45)',
-                    textDecoration: 'none',
-                    transition: 'all 0.3s ease',
-                }}
-                    onMouseEnter={e => { e.currentTarget.style.color = 'rgba(212,175,55,0.9)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                    onMouseLeave={e => { e.currentTarget.style.color = 'rgba(212,175,55,0.45)'; e.currentTarget.style.transform = 'none'; }}>
-                    <span style={{ fontSize: '16px' }}>{item.icon}</span>
-                    {item.label}
-                </a>
-            ))}
-        </div>
+
 
         <p className="font-jost" style={{
             fontSize: '10px',

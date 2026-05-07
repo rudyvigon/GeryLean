@@ -1,51 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const SWATCHES = [
-    { name: 'Pure White', hex: '#FFFFFF', text: '#111111', tip: 'Un clásico atemporal' },
-    { name: 'Midnight Black', hex: '#111111', text: '#FAF7F2', tip: 'Máxima elegancia nocturna' },
-    { name: 'Sterling Silver', hex: '#E0E0E0', text: '#111111', tip: 'Acentos metalizados sutiles' },
-    { name: 'Classic Gold', hex: '#D4AF37', text: '#111111', tip: 'Destellos cálidos exquisitos' },
-    { name: 'Charcoal Grey', hex: '#333333', text: '#FAF7F2', tip: 'El neutro perfecto' },
+    { name: 'Blanco', hex: '#FFFFFF', text: '#111111', tip: 'Un clásico atemporal' },
+    { name: 'Negro', hex: '#111111', text: '#FAF7F2', tip: 'Máxima elegancia nocturna' },
+    { name: 'Plata', hex: '#E0E0E0', text: '#111111', tip: 'Acentos metalizados sutiles' },
+    { name: 'Dorado', hex: '#D4AF37', text: '#111111', tip: 'Destellos cálidos exquisitos' },
+    { name: 'Gris', hex: '#333333', text: '#FAF7F2', tip: 'El neutro perfecto' },
 ];
 
-const GALLERY_IMAGES = [
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuD1Uqf9i482vpjvFGpk92ONEFYRGV5em3SlsvCbz83KqhLCJ6wPs0Bf__N7czyqHKRPGDLnzL_vEwd9U1BnOGw5XIV00NS31_XnJ0UV2EN3F9JjAsnA8eqcYxW2bvXqWGNZcBDo5Z-sZYOOKua1HRxnj8qdSxY_em7u27veLurnd9b7BrqKT6LOAvHvC2mXcH1wYfFR_v_9WCT3xJFZTFQH78HGKkdj3tvRQS1IkMmNdcA5jpcNagRl9B7SP9ilt0NgQwlKwT2ortc',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuDIEM77QP42cMGahHMF70ytrHyTS6SI8lfaL_hmdbQ7udj8r5V9GXG_V5lkU2PxPt7eDcdJAEcEuUdUVa2Idqe-oybTe2-OYr1boTqBPI93KtMuDeL8EQ1P9CUAMEB4g4kZ_o_kttcCOW8IRnUYxY2a6GYbAJH6rlzEcLVMfhJGqZuccEeBScT-jeU02mJYv7pgtBoTH5EnudmaUqwtG3AtB6g3tRa9XIbSOUTpXP-SIUUIRuFj3JR19qMqgO3zsAEwdML3pjNYqsw',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuCfuqES3oNJY_dUzlt3utuvbAKeB5BrNO79bSetmig-3MpfbGqGSpErP3exXIodbSXq-qEXWgVuCYcNSg92AP7sSiNSGHLBTObL-EZIUEOyC32HykaW52ULYTH9IBFMJKYjfSPBzXoiYmaAt9KorWIZNft1DATq9f1wCY2lqbE4-Jrd__TCzC73Oz0haJHYGQKHmeveVDuT8-6aXgoPkSzhJZ3hgv6lxudci42XtGdrZHFtt_IeEYB4_ytSpJEuRQIqQffX8_Py49c',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuD2eyucMV1qf6iX4Ejyu-nGWm9sOF7tzHOBSY9CN2NGngwdAFraNGSsWAIdJI9YX6xXut0FtMvkKIW2fXxIEFUqNF1tH2Bn09FKMOzcCHOZMSJjL93KfSaST8EzlvocyRcVedpjJD2i9bZENKIZOvFppcozIRr7WzRMg699kPEjSt7OHBJBRSb_5x2oprsJY1h0wjoxaedLN7GAfXqvwTte9JmUjYUwDzcKUrILDQPirSgeruStA__VFsEnuikW-eTAqoRxR5DjG0o',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuAMRKZX9OTEpyqLo78RFEoCxpCkORq4_WFTQE-dAHWlxvPjrtJ3HfeBFoaFFCCXDk0d1njqT_n3T5lpz25hKP52Ky1ERH1wJ_rqUauH-5sU0fVI80GYdthMB3hG0PtC3JP3D17dBMrmLWkL0GXaCfsQPgRfFfvvNVTLt-gLW3VmTvR8szKfjGRkmLcJTVVPieZYSQmU5jMFlLbQWfXPmFXHqcolEH7RfRbnzpj0Ge5VJ1K3jlfUG_kkYMAOi5tyZ1bIZUTr1gEgIX0',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuCrnzz5eyCrJYMtxesjWB-gB3VBAe-Vv34VYphFO1p5DjwD8Ft6D6WC8FTUO-1f2h-Q363O31NSIJ_3eJAEgQRxftCmN2uu1-dJA3enHiR-HHA1jV85V2cisP58I1ooctGPNHpKb62fGyCDFYXhe0IytzbXlGoJYREci8ZHPTyMDvhNr33qjscUzNfqZHMBOwUhC6EBdzdQ5Xu34KRDyYD-md6U2lOqY04i9NVPMHgSXit_8GJkKI_LcqAx1DXvqodB_xA5R5CcOOs',
-];
-
-const CAPTIONS = [
-    'Tarde de sol en Mendoza...', 'El primer abrazo', 'Bajo el cielo de Mendoza',
-    'Momentos que se quedan', 'La luz de noviembre', 'Con amor, para siempre',
-];
+import galleryImage from '../img/gallery_image.png';
 
 const DressCode = () => {
     const [activeTip, setActiveTip] = useState(null);
-    const [lightbox, setLightbox] = useState(null);
-    const galleryRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.querySelectorAll('.masonry-item').forEach((el, i) => {
-                        setTimeout(() => el.classList.add('animate-fade-up'), i * 100);
-                    });
-                }
-            });
-        }, { threshold: 0.1 });
-        if (galleryRef.current) observer.observe(galleryRef.current);
-        return () => observer.disconnect();
-    }, []);
-
-    useEffect(() => {
-        const handler = (e) => { if (e.key === 'Escape') setLightbox(null); };
-        window.addEventListener('keydown', handler);
-        return () => window.removeEventListener('keydown', handler);
-    }, []);
 
     return (
         <>
@@ -125,7 +91,7 @@ const DressCode = () => {
                         textAlign: 'center',
                         marginBottom: '1.4rem',
                     }}>
-                        Le Regole del{' '}
+                        Las reglas del{' '}
                         <em style={{
                             background: 'linear-gradient(90deg, #E0E0E0, #FFFFFF, #E0E0E0)',
                             backgroundSize: '200% 100%',
@@ -133,7 +99,7 @@ const DressCode = () => {
                             WebkitTextFillColor: 'transparent',
                             animation: 'goldShimmer 5s ease-in-out infinite',
                         }}>
-                            Bon Ton
+                            Buen Gusto
                         </em>
                     </h2>
 
@@ -153,7 +119,7 @@ const DressCode = () => {
                         letterSpacing: '0.05em', textAlign: 'center',
                         maxWidth: '480px', lineHeight: 1.75, marginBottom: '3.5rem',
                     }}>
-                        Cocktail Attire · Garden Party. Celebrá con nosotros en los colores de la estación.
+                        Vestidos de Noche - Elegantes . Celebrá con nosotros en los colores de la estación.
                     </p>
 
                     {/* ── Swatches ── */}
@@ -261,7 +227,7 @@ const DressCode = () => {
                                     fontSize: '11px', letterSpacing: '0.35em',
                                     color: 'rgba(224,224,224,0.8)', textTransform: 'uppercase', marginTop: '4px',
                                 }}>
-                                    Cocktail · Garden Party · 28 Noviembre 2026
+                                    Fiesta de Gala · Bajo las Estrellas
                                 </p>
                             </div>
                             {/* Leaf ornament */}
@@ -296,13 +262,12 @@ const DressCode = () => {
                                         fontSize: '1.25rem', fontWeight: 400,
                                         color: '#2C2422', letterSpacing: '0.03em',
                                     }}>
-                                        Encouraged
+                                        Sugerido
                                     </h4>
                                 </div>
                                 {[
-                                    { text: 'Vestidos largos o cocktail', icon: '◆' },
+                                    { text: 'Vestidos largos o Elegantes', icon: '◆' },
                                     { text: 'Trajes en tonos pasteles', icon: '◆' },
-                                    { text: 'Tocados y sombreros elegantes', icon: '◆' },
                                     { text: 'Accesorios en dorado o perla', icon: '◆' },
                                     { text: 'Colores de temporada', icon: '◆' },
                                 ].map(item => (
@@ -329,7 +294,7 @@ const DressCode = () => {
                                         fontSize: '1.25rem', fontWeight: 400,
                                         color: '#2C2422', letterSpacing: '0.03em',
                                     }}>
-                                        Please Avoid
+                                        Evitar
                                     </h4>
                                 </div>
                                 {[
@@ -396,11 +361,8 @@ const DressCode = () => {
                 }} />
                 <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
                     <div className="text-center mb-12">
-                        <p className="font-jost" style={{ fontSize: '11px', letterSpacing: '0.55em', color: 'rgba(212,175,55,0.75)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '0.75rem' }}>
-                            Our Story
-                        </p>
                         <h2 className="font-cormorant" style={{ fontSize: 'clamp(2rem,4vw,3.2rem)', fontWeight: 400, color: '#2C2422' }}>
-                            Momentos que nos Unieron
+                            Juntos y para siempre
                         </h2>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginTop: '1rem' }}>
                             <div style={{ width: '60px', height: '1px', background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.5))' }} />
@@ -411,46 +373,17 @@ const DressCode = () => {
                         </div>
                     </div>
 
-                    <div ref={galleryRef} className="masonry-grid">
-                        {GALLERY_IMAGES.map((src, i) => (
-                            <div key={i} className="masonry-item" style={{ opacity: 0 }}>
-                                <div
-                                    onClick={() => setLightbox(i)}
-                                    style={{
-                                        position: 'relative', overflow: 'hidden',
-                                        borderRadius: '16px', cursor: 'pointer',
-                                        boxShadow: '0 4px 24px rgba(0,0,0,0.1)',
-                                        transition: 'transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s ease',
-                                    }}
-                                    onMouseEnter={e => {
-                                        e.currentTarget.style.transform = 'scale(1.03) translateY(-6px) rotateX(2deg)';
-                                        e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.22)';
-                                        e.currentTarget.querySelector('img').style.filter = 'grayscale(0%) saturate(1)';
-                                        e.currentTarget.querySelector('.gallery-overlay').style.transform = 'translateY(0)';
-                                    }}
-                                    onMouseLeave={e => {
-                                        e.currentTarget.style.transform = 'none';
-                                        e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
-                                        e.currentTarget.querySelector('img').style.filter = 'grayscale(25%) saturate(0.85)';
-                                        e.currentTarget.querySelector('.gallery-overlay').style.transform = 'translateY(100%)';
-                                    }}>
-                                    <img src={src} alt={`Momento ${i + 1} - German y Leandro`}
-                                        style={{ width: '100%', height: 'auto', display: 'block', filter: 'grayscale(1) contrast(1.1)', transition: 'filter 0.4s ease' }} />
-                                    <div className="gallery-overlay" style={{
-                                        position: 'absolute', bottom: 0, left: 0, right: 0,
-                                        padding: '1.2rem', background: 'rgba(212,175,55,0.12)',
-                                        backdropFilter: 'blur(8px)', transform: 'translateY(100%)',
-                                        transition: 'transform 0.35s ease', display: 'flex',
-                                        alignItems: 'center', gap: '8px',
-                                    }}>
-                                        <span style={{ color: '#D4AF37', fontSize: '18px' }}>♡</span>
-                                        <span className="font-cormorant italic" style={{ color: '#FAF7F2', fontSize: '14px' }}>
-                                            {CAPTIONS[i % CAPTIONS.length]}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                    <div style={{
+                        position: 'relative',
+                        borderRadius: '24px',
+                        overflow: 'hidden',
+                        boxShadow: '0 24px 60px rgba(0,0,0,0.2)',
+                        border: '1px solid rgba(212,175,55,0.2)',
+                        maxWidth: '1000px',
+                        margin: '0 auto',
+                        aspectRatio: '16/9'
+                    }}>
+                        <img src={galleryImage} alt="Momentos que nos Unieron" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                     </div>
                 </div>
 
@@ -466,37 +399,7 @@ const DressCode = () => {
                 </div>
             </section>
 
-            {/* ── LIGHTBOX ── */}
-            <div className={`lightbox-overlay ${lightbox !== null ? 'active' : ''}`} onClick={() => setLightbox(null)}>
-                {lightbox !== null && (
-                    <>
-                        <button
-                            onClick={(e) => { e.stopPropagation(); setLightbox(l => (l - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length); }}
-                            style={{
-                                position: 'absolute', left: '2rem', top: '50%', transform: 'translateY(-50%)',
-                                background: 'rgba(212,175,55,0.2)', border: '1px solid rgba(212,175,55,0.5)',
-                                color: '#D4AF37', fontSize: '1.5rem', borderRadius: '50%',
-                                width: '48px', height: '48px', cursor: 'pointer',
-                            }}>‹</button>
-                        <img className="lightbox-img" src={GALLERY_IMAGES[lightbox]} alt={`Lightbox ${lightbox + 1}`} onClick={e => e.stopPropagation()} />
-                        <button
-                            onClick={(e) => { e.stopPropagation(); setLightbox(l => (l + 1) % GALLERY_IMAGES.length); }}
-                            style={{
-                                position: 'absolute', right: '2rem', top: '50%', transform: 'translateY(-50%)',
-                                background: 'rgba(212,175,55,0.2)', border: '1px solid rgba(212,175,55,0.5)',
-                                color: '#D4AF37', fontSize: '1.5rem', borderRadius: '50%',
-                                width: '48px', height: '48px', cursor: 'pointer',
-                            }}>›</button>
-                        <button
-                            onClick={() => setLightbox(null)}
-                            style={{
-                                position: 'absolute', top: '1.5rem', right: '1.5rem',
-                                background: 'transparent', border: 'none',
-                                color: 'rgba(250,247,242,0.7)', fontSize: '2rem', cursor: 'pointer',
-                            }}>×</button>
-                    </>
-                )}
-            </div>
+
         </>
     );
 };

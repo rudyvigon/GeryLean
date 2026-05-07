@@ -113,7 +113,7 @@ const Details = () => {
                         letterSpacing: '0.03em',
                         marginBottom: '0.5rem',
                     }}>
-                        The Day's Programme
+                        El día de nuestra boda
                     </h2>
                     <p className="font-jost" style={{
                         fontSize: '13px', letterSpacing: '0.25em',
@@ -187,22 +187,64 @@ const Details = () => {
                                     pointerEvents: 'none',
                                 }} />
 
-                                {/* Icono anillos entrelazados o copas */}
-                                <div style={{ marginBottom: '2rem', position: 'relative' }}>
-                                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style={{ margin: '0 auto' }}>
-                                        <circle cx="24" cy="32" r="16" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="4 2" fill="none" />
-                                        <circle cx="24" cy="32" r="12" stroke="#D4AF37" strokeWidth="1" fill="none" opacity="0.5" />
-                                        <circle cx="40" cy="32" r="16" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="4 2" fill="none" />
-                                        <circle cx="40" cy="32" r="12" stroke="#D4AF37" strokeWidth="1" fill="none" opacity="0.5" />
-                                        <path d="M32 16 L32 8 M32 48 L32 56 M16 32 L8 32 M56 32 L48 32" stroke="#D4AF37" strokeWidth="1" opacity="0.4" />
-                                        <circle cx="32" cy="32" r="3" fill="#D4AF37" opacity="0.8" />
-                                    </svg>
+                                {/* Icono anillos 3D hiperrealistas entrelazados */}
+                                <div style={{ 
+                                    marginBottom: '2rem', 
+                                    position: 'relative', 
+                                    height: '80px', 
+                                    display: 'flex', 
+                                    justifyContent: 'center', 
+                                    alignItems: 'center',
+                                    perspective: '1000px'
+                                }}>
+                                    <div style={{ position: 'relative', width: '100px', height: '60px', transformStyle: 'preserve-3d' }}>
+                                        {/* Anillo Izquierdo */}
+                                        <div className="ring-left" style={{
+                                            position: 'absolute',
+                                            left: '10px',
+                                            top: '50%',
+                                            marginTop: '-25px',
+                                            width: '50px',
+                                            height: '50px',
+                                            borderRadius: '50%',
+                                            border: '6px solid transparent',
+                                            background: 'linear-gradient(white, white) padding-box, linear-gradient(145deg, #FFDF73, #D4AF37, #8B6508, #F5E6A3) border-box',
+                                            boxShadow: 'inset 0 4px 8px rgba(0,0,0,0.5), 0 10px 20px rgba(0,0,0,0.4), inset 0 0 15px rgba(212,175,55,0.8)',
+                                            filter: 'drop-shadow(0px 8px 12px rgba(212,175,55,0.4))'
+                                        }}>
+                                            {/* Brillo interno para simular volumen */}
+                                            <div style={{
+                                                position: 'absolute', inset: '-6px', borderRadius: '50%',
+                                                border: '1px solid rgba(255, 255, 255, 0.6)', mixBlendMode: 'overlay', pointerEvents: 'none'
+                                            }} />
+                                        </div>
+
+                                        {/* Anillo Derecho */}
+                                        <div className="ring-right" style={{
+                                            position: 'absolute',
+                                            right: '10px',
+                                            top: '50%',
+                                            marginTop: '-25px',
+                                            width: '50px',
+                                            height: '50px',
+                                            borderRadius: '50%',
+                                            border: '6px solid transparent',
+                                            background: 'linear-gradient(white, white) padding-box, linear-gradient(315deg, #FFDF73, #D4AF37, #8B6508, #F5E6A3) border-box',
+                                            boxShadow: 'inset 0 4px 8px rgba(0,0,0,0.5), 0 10px 20px rgba(0,0,0,0.4), inset 0 0 15px rgba(212,175,55,0.8)',
+                                            filter: 'drop-shadow(0px 8px 12px rgba(212,175,55,0.4))'
+                                        }}>
+                                            <div style={{
+                                                position: 'absolute', inset: '-6px', borderRadius: '50%',
+                                                border: '1px solid rgba(255, 255, 255, 0.6)', mixBlendMode: 'overlay', pointerEvents: 'none'
+                                            }} />
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <h3 className="font-cormorant" style={{ fontSize: 'clamp(2rem, 5vw, 2.6rem)', fontWeight: 300, color: '#FAF7F2', marginBottom: '0.4rem', fontStyle: 'italic' }}>
                                     Ceremonia & Fiesta
                                 </h3>
-                                
+
                                 <p className="font-jost" style={{ fontSize: '12px', letterSpacing: '0.4em', color: 'rgba(212,175,55,0.7)', textTransform: 'uppercase', marginBottom: '2.5rem' }}>
                                     Aires del Sauzal
                                 </p>
@@ -216,7 +258,7 @@ const Details = () => {
                                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
                                         <div style={{ flex: 1, textAlign: 'right', paddingRight: '1rem' }}>
                                             <span className="font-jost" style={{ fontSize: '18px', fontWeight: 600, color: '#F5E6A3', letterSpacing: '0.05em' }}>
-                                                20:30<span style={{ fontSize: '12px', opacity: 0.7, marginLeft: '2px' }}>hs</span>
+                                                21:00<span style={{ fontSize: '12px', opacity: 0.7, marginLeft: '2px' }}>hs</span>
                                             </span>
                                         </div>
                                         <div style={{

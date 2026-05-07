@@ -111,7 +111,7 @@ const Hero = () => {
                         color: 'rgba(250,240,210,0.95)', textTransform: 'uppercase',
                         textShadow: '0 1px 8px rgba(0,0,0,0.6)',
                     }}>
-                        You are cordially invited to the celebration of
+                        Estas cordialmente invitado a la celebración de nuestra boda
                     </p>
 
                     {/* Título principal */}
@@ -145,36 +145,6 @@ const Hero = () => {
                     }}>
                         28.11.2026 · Mendoza, Argentina
                     </p>
-
-                    {/* CTA */}
-                    <div className="mt-8 flex flex-col items-center gap-3">
-                        <a href="#countdown" style={{
-                            fontFamily: "'Jost', sans-serif",
-                            fontSize: '11px',
-                            letterSpacing: '0.5em',
-                            textTransform: 'uppercase',
-                            color: '#1A1528',
-                            background: 'rgba(212,175,55,0.92)',
-                            border: '1.5px solid rgba(212,175,55,0.9)',
-                            padding: '12px 32px',
-                            borderRadius: '50px',
-                            textDecoration: 'none',
-                            fontWeight: 600,
-                            transition: 'all 0.3s ease',
-                            boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-                        }}
-                            onMouseEnter={e => {
-                                e.currentTarget.style.background = '#F5E6A3';
-                                e.currentTarget.style.boxShadow = '0 6px 28px rgba(0,0,0,0.4)';
-                            }}
-                            onMouseLeave={e => {
-                                e.currentTarget.style.background = 'rgba(212,175,55,0.92)';
-                                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
-                            }}>
-                            Scroll &amp; Discover
-                        </a>
-                        <span className="animate-bounce-down text-xl" style={{ color: 'rgba(255,230,120,0.9)', textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>↓</span>
-                    </div>
                 </div>
             </div>
 

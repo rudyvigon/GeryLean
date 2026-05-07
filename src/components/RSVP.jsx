@@ -86,7 +86,7 @@ const RSVP = () => {
                     textTransform: 'uppercase', color: 'rgba(212,175,55,0.75)',
                     marginBottom: '1.5rem',
                 }}>
-                    An Invitation
+                    Confirmación de Asistencia
                 </p>
 
                 <h2 className="font-cormorant" style={{
@@ -97,7 +97,7 @@ const RSVP = () => {
                     textAlign: 'center',
                     marginBottom: '1.4rem',
                 }}>
-                    Your{' '}
+                    Tu{' '}
                     <em style={{
                         fontStyle: 'italic',
                         background: 'linear-gradient(90deg, #D4AF37, #F5E6A3, #D4AF37)',
@@ -106,9 +106,9 @@ const RSVP = () => {
                         WebkitTextFillColor: 'transparent',
                         animation: 'goldShimmer 4s ease-in-out infinite',
                     }}>
-                        Presence
+                        Presencia
                     </em>{' '}
-                    is Requested
+                    es Requerida
                 </h2>
 
                 {/* Ornamental divider */}
@@ -148,7 +148,7 @@ const RSVP = () => {
                                 letterSpacing: '0.04em',
                                 lineHeight: 1.1,
                             }}>
-                                R.S.V.P.
+                                Agradecemos
                             </h3>
                             <p className="font-jost" style={{
                                 fontSize: '11px',
@@ -157,7 +157,7 @@ const RSVP = () => {
                                 textTransform: 'uppercase',
                                 marginTop: '4px',
                             }}>
-                                Kindly respond by 1 November 2026
+                                Tu respuesta antes del 1 de noviembre de 2026
                             </p>
                         </div>
                         {/* Wax seal */}
@@ -191,7 +191,7 @@ const RSVP = () => {
                         </div>
 
                         {/* Submit / CTA */}
-                        <a href="https://api.whatsapp.com/send/?phone=542613139444&text=Hola%20German%20y%20Leandro,%20quiero%20confirmar%20mi%20asistencia%20hacia%20su%20boda.&type=phone_number&app_absent=0"
+                        <a href="https://api.whatsapp.com/send/?phone=542613139444&text=Hola%20German%20y%20Leandro,%20quiero%20confirmar%20mi%20asistencia%20a%20la%20boda.&type=phone_number&app_absent=0"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="font-jost"
@@ -233,7 +233,7 @@ const RSVP = () => {
                     textAlign: 'center',
                     lineHeight: 1.7,
                 }}>
-                    "Every love story is beautiful, but ours is my favourite."
+                    "Cada historia de amor es hermosa, pero la nuestra es mi favorita."
                 </p>
             </div>
 
