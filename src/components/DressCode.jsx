@@ -348,7 +348,7 @@ const DressCode = () => {
             {/* ── GALERÍA ── */}
             <section id="gallery" style={{
                 background: 'linear-gradient(175deg, #F5EDE0 0%, #EEE3D2 60%, #E6D6C0 100%)',
-                padding: 'clamp(6rem,10vw,10rem) 1.5rem clamp(4rem,8vw,7rem)',
+                padding: 'clamp(6rem,10vw,10rem) 1.5rem clamp(9rem,14vw,12rem)',
                 position: 'relative',
                 overflow: 'visible',
             }}>
@@ -375,6 +375,7 @@ const DressCode = () => {
 
                     <div style={{
                         position: 'relative',
+                        zIndex: 2,
                         borderRadius: '24px',
                         overflow: 'hidden',
                         boxShadow: '0 24px 60px rgba(0,0,0,0.2)',

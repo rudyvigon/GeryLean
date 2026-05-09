@@ -1,0 +1,1 @@
+﻿const fs = require('fs'); let content = fs.readFileSync('index.html', 'utf8'); content = content.replace(/<meta name="description" content="Acomp.*?\/>/, '<meta name="description" content="Acompáñanos a celebrar la boda de German y Leandro. Sábado 28 de Noviembre de 2026 - Mendoza, Argentina." />'); fs.writeFileSync('index.html', content);

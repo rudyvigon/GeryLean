@@ -152,10 +152,8 @@ const Gifts = () => {
                                 Coordiná el abono de tu tarjeta de boda de manera rápida y segura.
                             </p>
                         </div>
-                        <a
-                            href={whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            onClick={() => setIsModalOpen(true)}
                             className="font-jost"
                             style={{
                                 padding: '12px 28px',
@@ -169,8 +167,6 @@ const Gifts = () => {
                                 textTransform: 'uppercase',
                                 cursor: 'pointer',
                                 transition: 'all 0.3s ease',
-                                textDecoration: 'none',
-                                display: 'inline-block'
                             }}
                             onMouseEnter={e => {
                                 e.currentTarget.style.background = 'rgba(212,175,55,0.1)';
@@ -181,8 +177,8 @@ const Gifts = () => {
                                 e.currentTarget.style.borderColor = 'rgba(212,175,55,0.6)';
                             }}
                         >
-                            Contactar por WhatsApp
-                        </a>
+                            Abonar entrada
+                        </button>
                     </div>
                 </div>
             </div>
