@@ -8,6 +8,12 @@ const SPARKLES = Array.from({ length: 8 }, (_, i) => ({
     size: `${4 + Math.random() * 6}px`,
 }));
 
+const SCHEDULE_ITEMS = [
+    { time: '20:30', label: 'Recepción' },
+    { time: '21:00', label: 'Ceremonia', note: '(Puntual)' },
+    { time: '00:00', label: 'La Fiesta' },
+];
+
 const TiltCard = ({ children, style = {} }) => {
     const cardRef = useRef(null);
 
@@ -245,48 +251,59 @@ const Details = () => {
                                     Ceremonia & Fiesta
                                 </h3>
 
-                                <p className="font-jost" style={{ fontSize: '12px', letterSpacing: '0.4em', color: 'rgba(212,175,55,0.7)', textTransform: 'uppercase', marginBottom: '2.5rem' }}>
+                                <p className="font-jost" style={{ fontSize: '12px', letterSpacing: '0.4em', color: 'rgba(212,175,55,0.7)', textTransform: 'uppercase', marginBottom: '1.8rem' }}>
                                     Aires del Sauzal
                                 </p>
 
                                 {/* Timeline UI Interna */}
                                 <div style={{
-                                    display: 'flex', flexDirection: 'column', gap: '1.25rem',
-                                    marginBottom: '2.5rem', width: '100%', maxWidth: '300px', margin: '0 auto 2.5rem',
+                                    display: 'flex', flexDirection: 'column',
+                                    width: '100%', maxWidth: '400px', margin: '0 auto 1.8rem',
                                 }}>
-                                    {/* Item Ceremonia */}
-                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-                                        <div style={{ flex: 1, textAlign: 'right', paddingRight: '1rem' }}>
-                                            <span className="font-jost" style={{ fontSize: '18px', fontWeight: 600, color: '#F5E6A3', letterSpacing: '0.05em' }}>
-                                                21:00<span style={{ fontSize: '12px', opacity: 0.7, marginLeft: '2px' }}>hs</span>
-                                            </span>
-                                        </div>
-                                        <div style={{
-                                            width: '12px', height: '12px', borderRadius: '50%', background: '#D4AF37',
-                                            boxShadow: '0 0 0 6px rgba(212,175,55,0.15)', position: 'relative',
-                                        }}>
-                                            <div style={{ position: 'absolute', top: '15px', left: '5.5px', width: '1px', height: '30px', background: 'rgba(212,175,55,0.3)' }} />
-                                        </div>
-                                        <div style={{ flex: 1, textAlign: 'left', paddingLeft: '1rem' }}>
-                                            <span className="font-jost" style={{ fontSize: '16px', color: 'rgba(250,247,242,0.9)' }}>La Ceremonia</span>
-                                        </div>
-                                    </div>
-
-                                    {/* Item Fiesta */}
-                                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', marginTop: '0.5rem' }}>
-                                        <div style={{ flex: 1, textAlign: 'right', paddingRight: '1rem' }}>
-                                            <span className="font-jost" style={{ fontSize: '18px', fontWeight: 600, color: '#F5E6A3', letterSpacing: '0.05em' }}>
-                                                00:00<span style={{ fontSize: '12px', opacity: 0.7, marginLeft: '2px' }}>hs</span>
-                                            </span>
-                                        </div>
-                                        <div style={{
-                                            width: '12px', height: '12px', borderRadius: '50%', background: '#D4AF37',
-                                            boxShadow: '0 0 0 6px rgba(212,175,55,0.15)',
-                                        }} />
-                                        <div style={{ flex: 1, textAlign: 'left', paddingLeft: '1rem' }}>
-                                            <span className="font-jost" style={{ fontSize: '16px', color: 'rgba(250,247,242,0.9)' }}>La Fiesta</span>
-                                        </div>
-                                    </div>
+                                    {SCHEDULE_ITEMS.map((item, idx) => {
+                                        const isFirst = idx === 0;
+                                        const isLast = idx === SCHEDULE_ITEMS.length - 1;
+                                        return (
+                                            <div key={item.time} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                                                <div style={{ flex: 1, textAlign: 'right', padding: '0.7rem 1rem 0.7rem 0' }}>
+                                                    <span className="font-jost" style={{ fontSize: '18px', fontWeight: 600, color: '#F5E6A3', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
+                                                        {item.time}<span style={{ fontSize: '12px', opacity: 0.7, marginLeft: '2px' }}>hs</span>
+                                                    </span>
+                                                </div>
+                                                <div style={{
+                                                    width: '12px', flexShrink: 0, alignSelf: 'stretch',
+                                                    position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                }}>
+                                                    <div style={{
+                                                        position: 'absolute',
+                                                        top: isFirst ? '50%' : 0,
+                                                        bottom: isLast ? '50%' : 0,
+                                                        left: '50%',
+                                                        transform: 'translateX(-50%)',
+                                                        width: '1px',
+                                                        background: 'rgba(212,175,55,0.3)',
+                                                    }} />
+                                                    <div style={{
+                                                        width: '12px', height: '12px', borderRadius: '50%', background: '#D4AF37',
+                                                        boxShadow: '0 0 0 6px rgba(212,175,55,0.15)', position: 'relative', zIndex: 1,
+                                                    }} />
+                                                </div>
+                                                <div style={{ flex: 1, textAlign: 'left', padding: '0.7rem 0 0.7rem 1rem', lineHeight: 1.3 }}>
+                                                    <span className="font-jost" style={{ fontSize: '16px', color: 'rgba(250,247,242,0.9)' }}>
+                                                        {item.label}
+                                                        {item.note && (
+                                                            <>
+                                                                {' '}
+                                                                <span style={{ fontSize: '13px', color: 'rgba(245,230,163,0.8)', fontWeight: 500, whiteSpace: 'nowrap' }}>
+                                                                    {item.note}
+                                                                </span>
+                                                            </>
+                                                        )}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
 
                                 <div style={{ width: '60px', height: '1px', background: 'rgba(212,175,55,0.3)', margin: '0 auto 1.5rem' }} />
